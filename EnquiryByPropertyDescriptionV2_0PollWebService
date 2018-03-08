@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions name="EnquiryByPropertyDescriptionV2_0PollWebService" targetNamespace="http://poll.epdv2_0.ws.bg.lr.gov/">
+<definitions name="EnquiryByPropertyDescriptionV2_0PollWebService" targetNamespace="http://poll.epdv2_0.ws.bg.lr.gov/" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://poll.epdv2_0.ws.bg.lr.gov/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
     <types>
-        <xsd:schema targetNamespace="http://poll.epdv2_0.ws.bg.lr.gov/">
+        <xsd:schema targetNamespace="http://poll.epdv2_0.ws.bg.lr.gov/" xmlns:ns1="http://www.oscre.org/ns/eReg/MR01-20090605/PollRequest" xmlns:ns2="http://www.oscre.org/ns/eReg-Final/2011/ResponseSearchByPropertyDescriptionV2_0" xmlns:ns3="http://poll.epdv2_0.ws.bg.lr.gov/">
             <xsd:import namespace="http://www.oscre.org/ns/eReg/MR01-20090605/PollRequest" schemaLocation="PollRequest.xsd"/>
             <xsd:import namespace="http://www.oscre.org/ns/eReg-Final/2011/ResponseSearchByPropertyDescriptionV2_0" schemaLocation="ResponseSearchByPropertyDescriptionV2_0.xsd"/>
             <xsd:element name="SOAPEngineSystemException" nillable="true" type="xsd:string"/>
@@ -19,20 +19,26 @@
             </xsd:complexType>
         </xsd:schema>
     </types>
-    <message name="propertyDescriptionPollResponse">
-        <part name="parameters" element="tns:getResponseResponse"></part>
+    <message name="propertyDescriptionPollRequest">
+        <part name="parameters" element="tns:getResponse">
+        </part>
     </message>
     <message name="SOAPEngineSystemException">
-        <part name="fault" element="tns:SOAPEngineSystemException"></part>
+        <part name="fault" element="tns:SOAPEngineSystemException">
+        </part>
     </message>
-    <message name="propertyDescriptionPollRequest">
-        <part name="parameters" element="tns:getResponse"></part>
+    <message name="propertyDescriptionPollResponse">
+        <part name="parameters" element="tns:getResponseResponse">
+        </part>
     </message>
     <portType name="PropertyDescriptionEnquiryV2_0PollService">
         <operation name="getResponse">
-            <input message="tns:propertyDescriptionPollRequest"></input>
-            <output message="tns:propertyDescriptionPollResponse"></output>
-            <fault name="SOAPEngineSystemException" message="tns:SOAPEngineSystemException"></fault>
+            <input message="tns:propertyDescriptionPollRequest">
+            </input>
+            <output message="tns:propertyDescriptionPollResponse">
+            </output>
+            <fault name="SOAPEngineSystemException" message="tns:SOAPEngineSystemException">
+            </fault>
         </operation>
     </portType>
     <binding name="PropertyDescriptionEnquiryV2_0PollRequestWSImplPortBinding" type="tns:PropertyDescriptionEnquiryV2_0PollService">
