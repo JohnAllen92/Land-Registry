@@ -58,7 +58,7 @@
     </binding>
     <service name="EnquiryByPropertyDescriptionV2_0PollWebService">
         <port name="PropertyDescriptionEnquiryV2_0PollRequestWSImplPort" binding="tns:PropertyDescriptionEnquiryV2_0PollRequestWSImplPortBinding">
-            <soap:address location="https://z0.b2b.http.server.landregistry.gov:13007/ECBG_StubService/EnquiryByPropertyDescriptionV2_0PollWebService"/>
+            <soap:address location="https://bgtest.landregistry.gov.uk/b2b/ECBG_StubService/EnquiryByPropertyDescriptionV2_0PollWebService"/>
         </port>
     </service>
 </definitions>
